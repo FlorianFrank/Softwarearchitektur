@@ -12,11 +12,10 @@
  */
 public class DualSplitString extends SimpleSplitString{
 
-    /**current cursorposition of the second cursor*/
+    /**current cursorposition of the second cursor.*/
     private int cursorPosition2;
 
-    /**
-     * The constructor allocates the delivered string
+    /** The constructor allocates the delivered string.
      * and sets the cursors to the default values
      * @param string delivered string
      */
@@ -25,9 +24,8 @@ public class DualSplitString extends SimpleSplitString{
         this.cursorPosition2 = string.length();
     }
 
-    /**
-     * shifts the second cursor about one step forward and returns the current object
-     * if the cursor is at the end of the string it only returns the object
+    /** Shifts the second cursor about one step forward and returns the current object.
+     * If the cursor is at the end of the string it only returns the object
      * @return current object
      */
     public DualSplitString forward2(){
@@ -37,8 +35,7 @@ public class DualSplitString extends SimpleSplitString{
         return this;
     }
 
-    /**
-     * sets the second cursor to it's default position
+    /** Sets the second cursor to it's default position.
      * @return current object
      */
     public DualSplitString home2(){
@@ -46,16 +43,14 @@ public class DualSplitString extends SimpleSplitString{
         return this;
     }
 
-    /**
-     * returns position of the second cursor
+    /** Returns position of the second cursor.
      * @return cursorposition2
      */
     public int getCursor2(){
         return this.cursorPosition2;
     }
 
-    /**
-     * returns the string between cursor1 and cursor2
+    /** Returns the string between cursor1 and cursor2.
      * @return substring between the cursorpositions
      */
     @Override
@@ -67,17 +62,17 @@ public class DualSplitString extends SimpleSplitString{
         }
     }
 
-    /**
-     * checks if string, cursor1 and cursor2 are equal to the delviered object
+    /** Checks if string, cursor1 and cursor2 are equal to the delviered object.
      * @param anything object to compare
      * @return boolean if comparison is true or false
      */
     @Override
     public boolean equals(Object anything){
         if(anything != null) {
-            DualSplitString compareObject = (DualSplitString) anything;
-            if (compareObject.string.equals(this.string) && compareObject.cursorPosition2 == this.cursorPosition2 &&
-                    compareObject.cursorPosition == this.cursorPosition) {
+            final DualSplitString compareObject = (DualSplitString) anything;
+            if (compareObject.string.equals(this.string)
+                    && compareObject.cursorPosition2 == this.cursorPosition2
+                    && compareObject.cursorPosition == this.cursorPosition) {
                 return true;
             } else {
                 return false;
@@ -86,6 +81,5 @@ public class DualSplitString extends SimpleSplitString{
             return false;
         }
     }
-
 
 }

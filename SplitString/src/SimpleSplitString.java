@@ -1,4 +1,4 @@
-/*
+/**
 * This class represents a simple string with a cursorPosition.
 * The defaultposition of the cursor is before the first letter of the string.
 * You can shift the cursor and print out the substring from the cursorposition to the end of the string
@@ -11,13 +11,12 @@
 **/
 public class SimpleSplitString implements SplitString {
 
-    /*The current position of the cursor*/
+    /**The current position of the cursor.*/
     protected int cursorPosition;
-    /**deliverd string*/
+    /**deliverd string.*/
     protected String string;
 
-    /**
-     * constructor allocates the delivered string
+    /** Constructor allocates the delivered string.
      * and sets the cursorPosition to 0
      * @param string delivered String
      */
@@ -29,8 +28,7 @@ public class SimpleSplitString implements SplitString {
         this.cursorPosition = 0;
     }
 
-    /**
-     * returns the current cursorposition
+    /** Returns the current cursorposition.
      * @return current cursorposition
      */
     @Override
@@ -38,8 +36,7 @@ public class SimpleSplitString implements SplitString {
         return cursorPosition;
     }
 
-    /**
-     * shifts the cursor about one step forward and returns the current object
+    /** Shifts the cursor about one step forward and returns the current object.
      * if the cursor is at the end of the string it only returns the object
      * @return current object
      */
@@ -51,8 +48,7 @@ public class SimpleSplitString implements SplitString {
         return this;
     }
 
-    /**
-     * sets the cursor to the defaultposition
+    /** Sets the cursor to the defaultposition.
      * @return current object
      */
     @Override
@@ -61,8 +57,7 @@ public class SimpleSplitString implements SplitString {
         return this;
     }
 
-    /**
-     * returns a substring from the cursorposition to the end of the string
+    /** Returns a substring from the cursorposition to the end of the string.
      * @return substring from cursorposition to the end
      */
     @Override
@@ -70,16 +65,16 @@ public class SimpleSplitString implements SplitString {
             return this.string.substring(this.cursorPosition,this.string.length());
     }
 
-    /**
-     * checks if string and cursorposition of the current and the delivered object are equal
+    /** Checks if string and cursorposition of the current and the delivered object are equal.
      * @param anything object to compare
      * @return boolean if objects are equal or not
      */
     @Override
     public boolean equals(Object anything){
         if(anything != null){
-        SimpleSplitString compareObject = (SimpleSplitString) anything;
-            if(compareObject.string.equals(this.string) && compareObject.cursorPosition == this.cursorPosition){
+       final SimpleSplitString compareObject = (SimpleSplitString) anything;
+            if(compareObject.string.equals(this.string)
+                    && compareObject.cursorPosition == this.cursorPosition){
                 return true;
             }else {
                 return false;
