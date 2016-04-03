@@ -66,23 +66,25 @@ public class SimpleSplitString implements SplitString {
     }
 
     /** Checks if string and cursorposition of the current and the delivered object are equal.
-     * @param anything object to compare
+     * @param o object to compare
      * @return boolean if objects are equal or not
      */
     @Override
-    public boolean equals(Object anything){
-        if(anything != null){
-       final SimpleSplitString compareObject = (SimpleSplitString) anything;
-            if(compareObject.string.equals(this.string)
-                    && compareObject.cursorPosition == this.cursorPosition){
-                return true;
-            }else {
-                return false;
-            }
-        }else {
-            return false;
-        }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        final SimpleSplitString string1 = (SimpleSplitString) o;
+
+        if (cursorPosition != string1.cursorPosition) return false;
+        return string.equals(string1.string);
 
     }
 
+    @Override
+    public int hashCode() {
+        int result = cursorPosition;
+        result = 31 * result + string.hashCode();
+        return result;
+    }
 }

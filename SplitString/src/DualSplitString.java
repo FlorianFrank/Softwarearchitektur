@@ -63,23 +63,25 @@ public class DualSplitString extends SimpleSplitString{
     }
 
     /** Checks if string, cursor1 and cursor2 are equal to the delviered object.
-     * @param anything object to compare
+     * @param o object to compare
      * @return boolean if comparison is true or false
      */
     @Override
-    public boolean equals(Object anything){
-        if(anything != null) {
-            final DualSplitString compareObject = (DualSplitString) anything;
-            if (compareObject.string.equals(this.string)
-                    && compareObject.cursorPosition2 == this.cursorPosition2
-                    && compareObject.cursorPosition == this.cursorPosition) {
-                return true;
-            } else {
-                return false;
-            }
-        }else {
-            return false;
-        }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        final DualSplitString that = (DualSplitString) o;
+
+        return cursorPosition2 == that.cursorPosition2;
+
     }
 
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + cursorPosition2;
+        return result;
+    }
 }
