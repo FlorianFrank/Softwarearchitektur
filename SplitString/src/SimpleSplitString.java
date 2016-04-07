@@ -12,9 +12,9 @@
 public class SimpleSplitString implements SplitString {
 
     /**The current position of the cursor.*/
-    protected int cursorPosition;
+    private int cursorPosition;
     /**deliverd string.*/
-    protected String string;
+    private String string;
 
     /** Constructor allocates the delivered string.
      * and sets the cursorPosition to 0
@@ -75,9 +75,7 @@ public class SimpleSplitString implements SplitString {
         if (o == null || getClass() != o.getClass()) return false;
 
         final SimpleSplitString string1 = (SimpleSplitString) o;
-
-        if (cursorPosition != string1.cursorPosition) return false;
-        return string.equals(string1.string);
+        return cursorPosition == string1.cursorPosition && string.equals(string1.string);
 
     }
 
@@ -86,5 +84,23 @@ public class SimpleSplitString implements SplitString {
         int result = cursorPosition;
         result = 31 * result + string.hashCode();
         return result;
+    }
+
+    public int getCursorPosition() {
+        return cursorPosition;
+    }
+
+    /** getter for string.
+     * @return string
+     */
+    public String getString() {
+        return string;
+    }
+
+    /** setter for string.
+     * @param string parameter for the string
+     */
+    public void setString(String string) {
+        this.string = string;
     }
 }

@@ -29,7 +29,7 @@ public class DualSplitString extends SimpleSplitString{
      * @return current object
      */
     public DualSplitString forward2(){
-        if(this.cursorPosition2 != this.string.length()){
+        if(this.cursorPosition2 != this.getString().length()){
             this.cursorPosition2++;
         }
         return this;
@@ -55,10 +55,10 @@ public class DualSplitString extends SimpleSplitString{
      */
     @Override
     public String toString(){
-        if(this.cursorPosition > this.cursorPosition2){
-            return this.string.substring(this.cursorPosition2,this.cursorPosition);
+        if(this.getCursorPosition() > this.cursorPosition2){
+            return this.getString().substring(this.cursorPosition2,this.getCursorPosition());
         }else {
-            return this.string.substring(this.cursorPosition,this.cursorPosition2);
+            return this.getString().substring(this.getCursorPosition(),this.cursorPosition2);
         }
     }
 
