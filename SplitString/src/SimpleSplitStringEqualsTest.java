@@ -52,7 +52,7 @@ public class SimpleSplitStringEqualsTest implements SplitStringEqualsTest {
     public void testEqualsStringComparison() {
         final SimpleSplitString splitString1 = new SimpleSplitString(new String("EqualStringComparisonTest123"));
         final SimpleSplitString splitString2 = new SimpleSplitString(new String("EqualStringComparisonTest123"));
-        /** Bei einem Vergleich mit == wären die Strings unterschiedlich, da nur die Referenz verglichen wird*/
+        //Bei einem Vergleich mit == wären die Strings unterschiedlich, da nur die Referenz verglichen wird
         assertTrue(splitString1.equals(splitString2));
     }
 }
