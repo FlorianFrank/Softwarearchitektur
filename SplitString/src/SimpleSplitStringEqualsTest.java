@@ -1,10 +1,17 @@
+/* (C) 2016, A. Diagne, F. Frank
+ * Hochschule München, FK07
+ * Praktikum Rechnerarchitektur
+ * Oracle Corporation Java 1.8.0_51, OSX 10.11.4
+ * emma (Intel Core i5 CPU/2600 MHz, 2 Cores, 8000 MB RAM)
+ **/
+
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /** This class Tests the equals-method from the SimpleSplitString- and the DualSplitString-class.
- * @author florianfrank
+ * @author Florian Frank, Alioun Diagne
  * @version 07-04-2016
  *
  *
