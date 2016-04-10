@@ -9,17 +9,20 @@ import static org.junit.Assert.assertTrue;
  *
  *
  */
+@SuppressWarnings(value = {"PMD.NoPackage",
+        "PMD.StringInstantiation"})
 public class SimpleSplitStringEqualsTest implements SplitStringEqualsTest {
 
 
-    @Override
     @Test
+    @Override
     public void testEqualsParameter() {
-        final SimpleSplitString splitstring1 = new SimpleSplitString("Test123");
-        final SimpleSplitString splitstring2 = splitstring1;
-        final Object splitString3 = new SimpleSplitString("Test123");
-        assertEquals(splitstring1.equals(splitstring2),splitstring2.equals(splitString3));
+        final SimpleSplitString equalsParameterString1 = new SimpleSplitString("Test123");
+        final SimpleSplitString splitString2 = new SimpleSplitString("Test123");
+        assertTrue(equalsParameterString1.equals(splitString2));
+        assertTrue(equalsParameterString1.equals((Object) splitString2));
     }
+
     @Test
     @Override
     public void testEqualsSuperCall() {
@@ -28,31 +31,21 @@ public class SimpleSplitStringEqualsTest implements SplitStringEqualsTest {
         splitString1.forward();
          assertFalse(splitString1.equals(splitString2));
     }
+
     @Test
     @Override
     public void testEqualsTypeCheck() throws NoSuchMethodException {
-        /** derived Class to check if the equals method contains a comparison by instance of
-         *
-          */
-        class DerivedSimpleSplitString extends SimpleSplitString{
-             /** sets string.
-              * @param string delivered Strings
-              */
-             DerivedSimpleSplitString(String string){
-              super(string);
-            }
-        }
+       final SplitString splitString = new SimpleSplitString("test");
+       final DualSplitString dualSplitString = new DualSplitString("test");
 
-        final DerivedSimpleSplitString derivedSimpleSplitString = new DerivedSimpleSplitString("DerivedTest123");
-        final SimpleSplitString splitstring1 = new SimpleSplitString("DerivedTest123");
-        assertFalse(splitstring1.equals(derivedSimpleSplitString));
+        assertEquals(splitString.equals(dualSplitString), dualSplitString.equals(splitString));
     }
 
     @Test
     @Override
     public void testEqualsStringComparison() {
-        final SimpleSplitString splitString1 = new SimpleSplitString(new String("StringTest123"));
-        final SimpleSplitString splitString2 = new SimpleSplitString(new String("StringTest123"));
+        final SimpleSplitString splitString1 = new SimpleSplitString(new String("String123"));
+        final SimpleSplitString splitString2 = new SimpleSplitString(new String("String123"));
         assertTrue(splitString1.equals(splitString2));
     }
 }

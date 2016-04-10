@@ -8,6 +8,7 @@
  * @author R. Schiedermeier, rs@cs.hm.edu
  * @version 2016-02-20
  */
+@SuppressWarnings("PMD.NoPackage")
 public interface SplitStringEqualsTest {
     /** Dieser Test scheitert, wenn SplitString.equals keinen Object-Parameter hat,
      * sondern ueberladen ist.

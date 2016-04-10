@@ -10,6 +10,7 @@
  * @version 29.03.2016
  *
  */
+@SuppressWarnings("PMD.NoPackage")
 public class DualSplitString extends SimpleSplitString{
 
     /**current cursorposition of the second cursor.*/
