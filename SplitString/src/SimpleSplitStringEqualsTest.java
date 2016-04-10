@@ -34,7 +34,7 @@ public class SimpleSplitStringEqualsTest implements SplitStringEqualsTest {
 
     @Test
     @Override
-    public void testEqualsTypeCheck() throws NoSuchMethodException {
+    public void testEqualsTypeCheck(){
        final SplitString splitString = new SimpleSplitString("test");
        final DualSplitString dualSplitString = new DualSplitString("test");
 
@@ -46,6 +46,7 @@ public class SimpleSplitStringEqualsTest implements SplitStringEqualsTest {
     public void testEqualsStringComparison() {
         final SimpleSplitString splitString1 = new SimpleSplitString(new String("String123"));
         final SimpleSplitString splitString2 = new SimpleSplitString(new String("String123"));
+        /** Bei einem Vergleich mit == wären die Strings unterschiedlich, da nur die Referenz verglichen wird*/
         assertTrue(splitString1.equals(splitString2));
     }
 }
