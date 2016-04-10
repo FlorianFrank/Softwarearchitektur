@@ -24,35 +24,34 @@ public class SimpleSplitStringEqualsTest implements SplitStringEqualsTest {
     @Test
     @Override
     public void testEqualsParameter() {
-        final SimpleSplitString equalsParameterString1 = new SimpleSplitString("Test123");
-        final SimpleSplitString splitString2 = new SimpleSplitString("Test123");
-        assertTrue(equalsParameterString1.equals(splitString2));
-        assertTrue(equalsParameterString1.equals((Object) splitString2));
+        final SimpleSplitString equalsParameterString1 = new SimpleSplitString("EqualsParameterTest123");
+        final SimpleSplitString equalsParameterString2 = new SimpleSplitString("EqualsParameterTest123");
+        assertTrue(equalsParameterString1.equals(equalsParameterString2));
+        assertTrue(equalsParameterString1.equals((Object) equalsParameterString2));
     }
 
     @Test
     @Override
     public void testEqualsSuperCall() {
-        final DualSplitString splitString1 = new DualSplitString("EqualSuperCallTest123");
-        final DualSplitString splitString2 = new DualSplitString("EqualSuperCallTest123");
+        final DualSplitString splitString1 = new DualSplitString("SuperCallTest123");
+        final DualSplitString splitString2 = new DualSplitString("SuperCallTest123");
         splitString1.forward();
-         assertFalse(splitString1.equals(splitString2));
+        assertFalse(splitString1.equals(splitString2));
     }
 
     @Test
     @Override
     public void testEqualsTypeCheck(){
-       final SplitString splitString = new SimpleSplitString("test");
-       final DualSplitString dualSplitString = new DualSplitString("test");
-
+       final SplitString splitString = new SimpleSplitString("EqualsTypeCheckTest123");
+       final DualSplitString dualSplitString = new DualSplitString("EqualsTypeCheckTest123");
         assertEquals(splitString.equals(dualSplitString), dualSplitString.equals(splitString));
     }
 
     @Test
     @Override
     public void testEqualsStringComparison() {
-        final SimpleSplitString splitString1 = new SimpleSplitString(new String("String123"));
-        final SimpleSplitString splitString2 = new SimpleSplitString(new String("String123"));
+        final SimpleSplitString splitString1 = new SimpleSplitString(new String("EqualStringComparisonTest123"));
+        final SimpleSplitString splitString2 = new SimpleSplitString(new String("EqualStringComparisonTest123"));
         /** Bei einem Vergleich mit == wären die Strings unterschiedlich, da nur die Referenz verglichen wird*/
         assertTrue(splitString1.equals(splitString2));
     }
