@@ -5,16 +5,11 @@ public class OperationsParallel {
     public static void main(String[] args){
         init(args);
         Object monitor1 = new Object();
-        Object monitor2 = new Object();
-        synchronized (monitor1){
+        
             A1.exec();
-        }
-        synchronized (monitor1){
             A2.exec();
-        }
-        synchronized (monitor1) {
             A3.exec();
-        }
+
 
         B1.exec();
         B2.exec();
